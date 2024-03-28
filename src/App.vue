@@ -1,13 +1,25 @@
 <script>
+import axios from 'axios';
+const endpoint = 'http://localhost:8000/api/projects/';
 export default {
-  name: 'Boolfolio'
+  name: 'Boolfolio',
+  data: () => ({ projects: [] }),
+  methods: {
+    fetchProjects() {
+      axios.get(endpoint).then(res => {
+        this.projects = res.data;
+        console.log(this.projects);
+      })
+    },
+  },
+  created() {
+    this.fetchProjects();
+  }
 }
 </script>
 
 <template>
-  <div class="container mt-5">
-    <h1>ciao</h1>
-  </div>
+
 </template>
 
 <style></style>
