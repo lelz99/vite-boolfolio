@@ -1,0 +1,30 @@
+<script>
+import ProjectCard from '../components/projects/ProjectCard.vue'
+import axios from 'axios';
+const endpoint = 'http://localhost:8000/api/projects/';
+
+export default {
+    name: 'HomePage',
+    data: () => ({ projects: [] }),
+    components: { ProjectCard },
+    methods: {
+        fetchProjects() {
+            axios.get(endpoint).then(res => {
+                this.projects = res.data;
+            })
+        },
+    },
+    created() {
+        this.fetchProjects();
+    }
+}
+</script>
+
+<template>
+    <section id="home-page">
+        <h2 class="h1">Progetti</h2>
+        <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
+    </section>
+</template>
+
+<style></style>
