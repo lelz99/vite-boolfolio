@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <section id="home-page">
+    <section id="home-page" class=" container mt-5">
         <h2 class="h1">Progetti</h2>
         <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
     </section>

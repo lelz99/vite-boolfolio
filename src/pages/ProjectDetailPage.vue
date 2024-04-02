@@ -11,6 +11,9 @@ export default {
         fetchProject() {
             axios.get(`${endpoint}${this.$route.params.slug}`).then(res => {
                 this.project = res.data;
+            }).catch(err => {
+                console.error(err);
+                this.$router.push({ name: '404' })
             })
         },
     },
@@ -21,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <section id="project-detail">
+    <section id="project-detail" class=" container mt-5">
         <h1>Dettaglio Progetto</h1>
         <ProjectCard :project="project" />
     </section>
