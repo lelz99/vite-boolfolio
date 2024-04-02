@@ -5,7 +5,7 @@ const endpoint = 'http://localhost:8000/api/projects/';
 
 export default {
     name: 'ProjectDetailPage',
-    data: () => ({ project: {} }),
+    data: () => ({ project: {}, isActive: true }),
     components: { ProjectCard },
     methods: {
         fetchProject() {

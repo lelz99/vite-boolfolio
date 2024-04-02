@@ -6,6 +6,8 @@ import ErrorPage from '../pages/ErrorPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
+    linkActiveClass: 'fw-bold',
+    linkExactActiveClass: 'fw-bold',
     routes: [
         { path: '/', name: 'home', component: HomePage },
         { path: '/project/:slug', name: 'project-detail', component: ProjectDetailPage },

@@ -11,6 +11,7 @@ export default {
         fetchProjects() {
             axios.get(endpoint).then(res => {
                 this.projects = res.data;
+                console.log(this.projects)
             })
         },
     },
