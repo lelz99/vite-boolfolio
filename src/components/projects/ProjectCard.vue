@@ -24,15 +24,15 @@ export default {
                     <ul class="list-unstyled">
                         <li>
                             <strong>Tecnologie:</strong>
-                            <span v-for="technology in  project.technologies" :class="technology.color">
-                                <i :class="technology.icon" class="mx-1 fa-2x"></i>
-                            </span>
+                            <i v-for="technology in  project.technologies"
+                                :class="`${technology.icon} ${technology.color}`" class="mx-1 fa-2x">
+                            </i>
                         </li>
                         <li>
                             <strong>Tipo:</strong> {{ project.type ? project.type?.label : 'Non Definito' }}
                         </li>
                         <li>
-                            <strong>Data fine Progetto:</strong> {{ project.end_date }}
+                            <strong>Data Pubblicazione:</strong> {{ project.updated_at }}
                         </li>
                     </ul>
                 </div>
